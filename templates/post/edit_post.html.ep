@@ -1,0 +1,26 @@
+ % my $posts = db->resultset('Post');
+
+
+ 
+  <h2>Trying to edit a post !!!! </h2>
+  % my $posts = $self->db->resultset('Post')->find($self->stash('id'));
+<h3>Edit an old post</h3>
+<form method="post">
+	<h1>title</h1></br>
+	<b><input type="text" name="title" value="<%= $posts->title %>" <br></b></br>
+	
+	<h2>content</h2>
+	<input type="text" name="content" style="font-size:12pt;height:200px;width:400px;"value="<%= $posts->content%>" <br>
+	<input type="submit" value="edit">
+</form>
+
+% if (flash 'post_edited') {
+    <p>Post successfully edited!</p>
+% }	 
+
+
+<!--style="font-size:12pt;height:200px;width:400px;" -->
+  
+
+
+

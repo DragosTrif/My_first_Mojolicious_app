@@ -1,0 +1,10 @@
+%# my $comment = db->resultset('Comment');
+
+ <h1>Trying to edit a comment !!!! </h1>
+  % my $comment = $self->db->resultset('Comment')->find($self->stash('id'));
+
+  <form method="post">
+  	<h1> content </h1>
+  	<input type="text" name="content" style="font-size:12pt;height:200px;width:400px;"value="<%= $comment->content%>" <br>
+  	<input type="submit" value="edit">
+  </form>

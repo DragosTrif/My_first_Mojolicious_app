@@ -1,0 +1,16 @@
+<h2>This a realy cool test!!!! </h2>
+
+<h3>Create new post</h3>
+
+%= form_for 'create_new_comment'=> { id => stash('id') } => (method => 'POST') => begin
+	<div>
+
+	%= label_for content => 'Post Content'
+	<br/>
+	%= text_area 'content', cols => 40, rows => 20
+
+	</div>
+
+	%= submit_button 'Publish', class => 'btn'
+% end
+

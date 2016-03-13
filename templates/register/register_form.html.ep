@@ -1,0 +1,33 @@
+<h2>Register </h2>
+% if (flash->{user_saved}) {
+	<p>Your user and password  was saved!</p>
+	
+% }
+
+%= link_to "Register" => 'register_form'
+
+<h3>Create new user</h3>
+
+%= form_for 'do_register' => (method => 'POST') => begin
+	<div>
+		%= label_for username => 'username'
+		<br/>
+		%= text_field 'username'
+	</div>
+
+	<div>
+		%= label_for fullname => 'fullname'
+		<br/>
+		%= text_field 'fullname'
+
+	</div>
+
+	<div>
+		%= label_for pw_hash => 'password'
+		<br/>
+		%= text_field 'password'
+	</div>
+
+	%= submit_button 'Register', class => 'btn'
+% end	
+

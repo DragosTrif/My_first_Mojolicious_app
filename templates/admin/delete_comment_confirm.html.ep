@@ -1,0 +1,7 @@
+<h2>Confirm Deletion<h2>
+
+% my $coment = $self->db->resultset('Comment')->find($self->stash('id'));
+<p>Do you really want to delete the comment <%= stash('id') %> ? </p>
+%= form_for 'delete_comment_confirm' => { id => stash('id') } => (method => 'POST') => begin
+    %= submit_button 'Delete_comment', class => 'btn'
+% end
